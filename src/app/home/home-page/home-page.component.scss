@@ -1,0 +1,20 @@
+
+.intro {
+
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+
+  .search-card {
+    width: 400px;
+
+    & .form-field {
+      width: 100% !important;
+    }
+  }
+}

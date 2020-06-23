@@ -1,0 +1,25 @@
+.wrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  .favorite-movie {
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    span {
+      position: absolute;
+      bottom: 5px;
+      left: 3px;
+      background-color: rgba(0,0,0,0.6);
+    }
+  }
+}

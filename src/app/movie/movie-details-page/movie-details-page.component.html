@@ -1,0 +1,32 @@
+<ng-container *ngIf="movie">
+  <div class="wrapper">
+    <img [src]="movie.Poster">
+    <div class="movie-data">
+      <h1 class="mat-h6">{{movie.Title}}
+        <button (click)="handleFavorite(movie)" mat-icon-button
+                [color]="isFavoritedMovie(movie) ? 'accent' : undefined">
+          <mat-icon>star</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <a target="_blank" [href]="'https://www.imdb.com/title/' + movie.imdbID + '/?ref_=rlm'"><mat-icon>web</mat-icon></a>
+        </button>
+      </h1>
+      <div class="subtitle">
+        <span class="mat-caption">{{movie.Year}}</span>
+        <span class="mat-caption rating">{{movie.Rated}}</span>
+        <span class="mat-h2">{{movie.Type === 'series' ? movie.totalSeasons + ' seasons' : movie.Runtime}}</span>
+      </div>
+      <p class="mt-1">{{movie.Plot}}</p>
+      <p class="mt-1">Genre: {{movie.Genre}}</p>
+      <p class="mt-1" *ngIf="movie.Metascore">Metascore: {{movie.Metascore}}</p>
+      <p class=" ratings">
+        <ng-container *ngFor="let rating of movie.Ratings">
+          <div>
+            <div>{{rating.Source}}</div>
+            <span>{{rating.Value}}</span>
+          </div>
+        </ng-container>
+      </p>
+    </div>
+  </div>
+</ng-container>

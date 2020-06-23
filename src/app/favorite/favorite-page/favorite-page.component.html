@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <ng-container *ngFor="let movie of favorite$ | async">
+    <div (click)="selectMovie(movie)" class="favorite-movie">
+      <img [src]="movie.Poster">
+      <span>{{movie.Title}}</span>
+    </div>
+  </ng-container>
+</div>
+<app-movie-details-page [movie]="movie$ | async"></app-movie-details-page>
